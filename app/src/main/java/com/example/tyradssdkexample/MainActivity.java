@@ -24,15 +24,15 @@ public class MainActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
-        Tyrads.getInstance().init(this,"","", false);
+        Tyrads.getInstance().init(this,"","", true);
 
         //login user when he enters the dashboard
         Tyrads.getInstance().loginUser("");
-        Tyrads.getInstance().showOffers("",0);
 
         Button button = findViewById(R.id.button);
         button.setOnClickListener(v -> {
             Toast.makeText(this, "Please wait", Toast.LENGTH_SHORT).show();
+            Tyrads.getInstance().showOffers("",0);
         });
     }
 }
